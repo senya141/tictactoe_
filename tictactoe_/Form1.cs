@@ -21,7 +21,7 @@ namespace tictactoe_
                     buttons[i, j].Size = new Size(200, 200);
                 }
             }
-
+            setButtons();
         }
 
         private void rulesButton_Click(object sender, EventArgs e)
