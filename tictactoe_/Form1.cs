@@ -43,6 +43,94 @@ namespace tictactoe_
                 }
             }
         }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            switch (player)
+            {
+                case 1:
+                    sender.GetType().GetProperty("Text").SetValue(sender, "x");
+                    player = 0;
+                    label1.Text = "Текущий ход: Игрок 2";
+                    break;
+                case 0:
+                    sender.GetType().GetProperty("Text").SetValue(sender, "o");
+                    player = 1;
+                    label1.Text = "Текущий ход: Игрок 1";
+                    break;
+            }
+            sender.GetType().GetProperty("Enabled").SetValue(sender, false);
+            checkWin();
+        }
+        private void checkWin()
+        {
+            if (buttons[0, 0].Text == buttons[0, 1].Text && buttons[0, 1].Text == buttons[0, 2].Text)
+            {
+                if (buttons[0, 0].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            if (buttons[1, 0].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[1, 2].Text)
+            {
+                if (buttons[1, 0].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            if (buttons[2, 0].Text == buttons[2, 1].Text && buttons[2, 1].Text == buttons[2, 2].Text)
+            {
+                if (buttons[2, 0].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            if (buttons[0, 0].Text == buttons[1, 0].Text && buttons[1, 0].Text == buttons[2, 0].Text)
+            {
+                if (buttons[0, 0].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            if (buttons[0, 1].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[2, 1].Text)
+            {
+                if (buttons[0, 1].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            if (buttons[0, 2].Text == buttons[1, 2].Text && buttons[1, 2].Text == buttons[2, 2].Text)
+            {
+                if (buttons[0, 2].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            if (buttons[0, 0].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[2, 2].Text)
+            {
+                if (buttons[0, 0].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            if (buttons[2, 0].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[0, 2].Text)
+            {
+                if (buttons[2, 0].Text != "")
+                {
+                    MessageBox.Show("Вы победили!");
+                    flag = true;
+                }
+            }
+            checkDraw();
+            flag = false;
+        }
         private void restartButton_Click(object sender, EventArgs e)
         {
 
