@@ -26,7 +26,7 @@ namespace tictactoe_
 
         private void rulesButton_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("»гроки ход€т поочередно.\r\nќдин игрок играет крестиками, другой Ч ноликами.\r\n»грок не может сделать ход вне своего хода.\r\n");
         }
 
         private void restartButton_Click(object sender, EventArgs e)
