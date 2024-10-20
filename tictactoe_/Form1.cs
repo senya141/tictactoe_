@@ -131,6 +131,34 @@ namespace tictactoe_
             checkDraw();
             flag = false;
         }
+
+        private void checkDraw()
+        {
+            if (flag == false)
+            {
+                bool emptyButton = true;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (buttons[i, j].Text == "")
+                            emptyButton = false;
+                    }
+                }
+                if (emptyButton == true)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            buttons[i, j].Text = "";
+                            buttons[i, j].Enabled = true;
+                        }
+                    }
+                    MessageBox.Show("Ничья! Начинаем игру заново");
+                }
+            }
+        }
         private void restartButton_Click(object sender, EventArgs e)
         {
 
