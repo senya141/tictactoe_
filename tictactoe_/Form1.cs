@@ -29,6 +29,20 @@ namespace tictactoe_
             MessageBox.Show("»гроки ход€т поочередно.\r\nќдин игрок играет крестиками, другой Ч ноликами.\r\n»грок не может сделать ход вне своего хода.\r\n");
         }
 
+        private void setButtons()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    buttons[i, j].Location = new Point(12 + 206 * j, 12 + 206 * i);
+                    buttons[i, j].Click += button_Click;
+                    buttons[i, j].Font = new Font(new FontFamily("Microsoft Sans Serif"), 138);
+                    buttons[i, j].Text = "";
+                    this.Controls.Add(buttons[i, j]);
+                }
+            }
+        }
         private void restartButton_Click(object sender, EventArgs e)
         {
 

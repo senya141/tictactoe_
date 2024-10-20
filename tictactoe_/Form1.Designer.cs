@@ -58,7 +58,7 @@
             restartButton.Name = "restartButton";
             restartButton.Size = new Size(75, 23);
             restartButton.TabIndex = 2;
-            restartButton.Text = "button1";
+            restartButton.Text = "Рестарт";
             restartButton.UseVisualStyleBackColor = true;
             restartButton.Click += restartButton_Click;
             // 
